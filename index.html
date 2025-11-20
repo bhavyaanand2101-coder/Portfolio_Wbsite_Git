@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Bhavya Anand" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Personal Portfolio</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; /* Remove default body padding */
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333; /* Dark grey text color */
+        }
+
+        /* Header Styles: Styles the top section of the page, typically containing the site title and navigation. */
+        header {
+            background-color: #333; /* Dark background for the header */
+            color: #fff; /* White text color for header content */
+            padding: 1rem 0; /* Vertical padding, no horizontal padding */
+            text-align: center; /* Center-align header content */
+        }
+
+        header h1 {
+            margin: 0; /* Remove default margin for the main heading */
+            font-size: 2.5rem; /* Large font size for the main heading */
+        }
+
+        /* Navigation Bar Styles: Styles the navigation links within the header. */
+        nav ul {
+            padding: 0; /* Remove default padding for unordered list */
+            list-style: none; /* Remove bullet points from list items */
+        }
+
+        nav ul li {
+            display: inline; /* Display list items horizontally */
+            margin-right: 20px; /* Space between navigation links */
+        }
+
+        nav a {
+            color: #fff; /* White color for navigation links */
+            text-decoration: none; /* Remove underline from links */
+            font-weight: bold; /* Bold text for links */
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        nav a:hover {
+            color: #007bff; /* Blue highlight color when hovering over links */
+        }
+
+        /* Main Content Area: Styles the main container for the page's content. */
+        main {
+            padding: 20px; /* Padding around the content inside main */
+            max-width: 960px; /* Maximum width of the main content area */
+            margin: 20px auto; /* Center the main content block horizontally with auto margins */
+            background-color: #fff; /* White background for the main content */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the main content */
+        }
+
+        /* Section Styles: General styles for all major content sections. */
+        section {
+            margin-bottom: 2rem; /* Space between different sections */
+            padding: 20px; /* Padding inside each section */
+            border-bottom: 1px solid #eee; /* Light grey separator line at the bottom of each section */
+        }
+
+        section:last-of-type {
+            border-bottom: none; /* Remove the bottom border from the last section */
+        }
+
+        h2 {
+            color: #007bff; /* Blue color for section headings */
+            text-align: center; /* Center-align section headings */
+            margin-bottom: 1.5rem; /* Space below section headings */
+        }
+
+        /* About Me Section: Specific styles for the "About Me" section. */
+        #about {
+            text-align: center; /* Center-align content within the About Me section */
+        }
+
+        #about img {
+            border-radius: 50%; /* Make the profile image circular */
+            max-width: 180px; /* Maximum width of the image */
+            height: 180px; /* Fixed height for the image */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            margin-top: 1rem; /* Space above the image */
+            border: 4px solid #007bff; /* Blue border around the image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the image */
+        }
+
+        /* Projects Section: Specific styles for the "My Projects" section. */
+        #projects ul {
+            list-style: disc; /* Use traditional disc bullet points */
+            margin-left: 20px; /* Indent the list items */
+        }
+
+        #projects li {
+            margin-bottom: 10px; /* Space between each project list item */
+        }
+
+        /* Skills Table Styles: Styles for the technical skills table. */
+        #skills table {
+            width: 80%; /* Table takes up 80% of its container's width */
+            margin: 20px auto; /* Center the table horizontally */
+            border-collapse: collapse; /* Collapse borders between cells */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
+        }
+
+        #skills th, #skills td {
+            border: 1px solid #ddd; /* Light grey border for table cells */
+            padding: 12px; /* Padding inside table cells */
+            text-align: left; /* Align text to the left in cells */
+        }
+
+        #skills th {
+            background-color: #007bff; /* Blue background for table headers */
+            color: white; /* White text for table headers */
+            text-transform: uppercase; /* Uppercase text for table headers */
+        }
+
+        #skills tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light grey background for even table rows (alternating colors) */
+        }
+
+        #skills tr:hover {
+            background-color: #f1f1f1; /* Slightly darker background on row hover */
+        }
+
+        /* Contact Form Styles: Styles for the contact me form. */
+        #contact form {
+            display: grid; /* Use CSS Grid for layout */
+            grid-template-columns: 1fr; /* Single column layout */
+            gap: 15px; /* Space between grid items */
+            max-width: 500px; /* Maximum width for the form */
+            margin: 0 auto; /* Center the form horizontally */
+            padding: 20px; /* Padding inside the form container */
+            border: 1px solid #ddd; /* Light grey border for the form */
+            border-radius: 8px; /* Slightly rounded corners for the form */
+            background-color: #fdfdfd; /* Very light background for the form */
+        }
+
+        #contact label {
+            font-weight: bold; /* Bold text for form labels */
+            margin-bottom: 5px; /* Space below labels */
+            display: block; /* Make labels block-level elements for better spacing */
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%; /* Make input fields take full width of their container */
+            padding: 10px; /* Padding inside input fields */
+            border: 1px solid #ccc; /* Light grey border for input fields */
+            border-radius: 4px; /* Rounded corners for input fields */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        #contact textarea {
+            resize: vertical; /* Allow only vertical resizing of the textarea */
+        }
+
+        #contact button {
+            background-color: #007bff; /* Blue background for the submit button */
+            color: white; /* White text for the button */
+            padding: 12px 20px; /* Padding inside the button */
+            border: none; /* No border for the button */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            font-size: 1rem; /* Standard font size for the button */
+            transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+        }
+
+        #contact button:hover {
+            background-color: #0056b3; /* Darker blue on button hover */
+        }
+
+        /* Footer Styles: Styles for the page footer. */
+        footer {
+            text-align: center; /* Center-align footer content */
+            padding: 20px; /* Padding around footer content */
+            background-color: #333; /* Dark background for the footer */
+            color: #fff; /* White text for the footer */
+            font-size: 0.9rem; /* Slightly smaller font size for footer text */
+            margin-top: 30px; /* Space above the footer */
+        }
+
+        /* Marquee Style: Styles for the scrolling text element. */
+        marquee {
+            background-color: #ffeb3b; /* Yellow background for the marquee */
+            color: #333; /* Dark text color for the marquee */
+            padding: 8px 0; /* Vertical padding for the marquee */
+            font-weight: bold; /* Bold text for the marquee */
+            border-bottom: 2px solid #fbc02d; /* Darker yellow border at the bottom of the marquee */
+        }
+
+        /* Responsive Design: Media queries for adjusting layout on different screen sizes. */
+
+        /* Styles for screens up to 768px wide (e.g., tablets) */
+        @media (max-width: 768px) {
+            nav ul li {
+                margin-right: 10px; /* Reduce space between navigation links */
+            }
+
+            #skills table {
+                width: 100%; /* Make skills table full width on smaller screens */
+            }
+        }
+
+        /* Styles for screens up to 480px wide (e.g., mobile phones) */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem; /* Reduce main heading font size */
+            }
+
+            nav ul li {
+                display: block; /* Stack navigation links vertically */
+                margin-bottom: 10px; /* Space between stacked navigation links */
+            }
+            nav ul {
+                text-align: center; /* Center the stacked navigation links */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Marquee: A scrolling text banner at the top of the page. -->
+    <marquee behavior="left" direction="">This is my first website</marquee>
+
+    <!-- Header Section: Contains the main title and navigation menu. -->
+    <header>
+        <h1>Bhavya Anand</h1>
+        <!-- Navigation Bar: Links to different sections of the portfolio. -->
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <p>Hello! I am a web development student. This is my personal portfolio website.</p>
+    </header>
+
+    <!-- Main Content Area: Holds all the primary content sections of the portfolio. -->
+    <main id="main-content">
+        <!-- About Me Section: Provides information about the portfolio owner. -->
+        <section id="about">
+            <h2>About Me</h2>
+            <!-- Profile image: Make sure you have an 'images' folder with 'profile.jpg' -->
+            <!-- NOTE: The image path '/Users/bhavya/Desktop/ /Books Sem-1/WEB_DEV_1- 1BY1/HTML/Photo.jpeg' is a local file path and will not work when deployed on a web server. 
+                 You should place your image in a dedicated 'images' folder within your project directory and use a relative path like 'images/Photo.jpeg' or 'Photo.jpeg' if it's in the same folder as index.html. -->
+            <img src="/Users/bhavya/Desktop/ /Books Sem-1/WEB_DEV_1- 1BY1/HTML/Photo.jpeg" alt="Bhavya Anand" width="250" height="300">
+            <p>I am passionate about learning web development and building creative projects. My journey into web development began with a fascination for how websites are built and interact with users. I've been honing my skills in front-end technologies such as HTML and am eager to apply my knowledge to real-world applications and contribute to innovative projects. I believe in continuous learning and always strive to improve my craft.</p>
+        </section>
+
+        <!-- My Projects Section: Lists various projects the portfolio owner has worked on. -->
+        <section id="projects">
+            <h2>My Projects</h2>
+            <ul>
+                <li>
+                    <strong>Portfolio Website:</strong> A personal one-page website designed to showcase my bio, technical skills, and contact details. Built with semantic HTML for structure and accessibility.
+                </li>
+                <li>
+                    <strong>Medium Clone:</strong> A front-end project creating a static blog layout that mimics the clean design of Medium, developed using only HTML and CSS to demonstrate layout and styling principles.
+                </li>
+                <li>
+                    <strong>Interactive Birthday Card:</strong> A creative web-based greeting card, implemented with HTML for content structure and CSS for engaging visual styling and animations.
+                </li>
+                <li>
+                    <strong>User Registration Form:</strong> A dedicated web page featuring various form input types, including name, email, and message fields, with robust client-side validation and accessibility features for enhanced user experience.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Technical Skills Section: Displays a table of technical skills and proficiency levels. -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML5</td>
+                        <td>Beginner</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>Beginner</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Learning</td>
+                    </tr>
+                    <tr>
+                        <td>Git/GitHub</td>
+                        <td>Beginner</td>
+                    </tr>
+                    <tr>
+                        <td>VS Code</td>
+                        <td>Proficient</td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>Learning</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Me Section: Contains a form for visitors to send messages. -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST"> 
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="7" placeholder="Type your message here..." required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section: Contains copyright information and other legal text. -->
+    <footer>
+        <p> Bhavya Anand</p><br>
+        <p>Copyright Reserved 2025-2029</p>
+    </footer>
+</body>
+</html>
